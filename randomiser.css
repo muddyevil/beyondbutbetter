@@ -1,0 +1,35 @@
+button {
+    background-color:#fed9cc;
+	border-radius:28px;
+	border:1px solid #cbada3;
+	display:inline-block;
+	cursor:pointer;
+	color:#4d403d;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cbada3;
+}
+
+p {
+    font-size: 14;
+    color: #4b403d;
+    padding: 5px;
+    margin: 5px;
+}
+
+h5 {
+    font-weight: bold;
+    color: #4b403d;
+    font-size: 16;
+}
+
+.randomiser {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+}
