@@ -10,7 +10,7 @@
 
 <div class="randomiser">
     <div class="randomiseAll">
-        <button onclick="setRace(), setClas(), setBackground(), setAlignment()">Randomise All</button>
+        <button onclick="setRace(), setSubRace(), setClas(), setSubClas(); setBackground(), setAlignment()">Randomise All</button>
     </div>
     <div class="randomiseRace">
     <button onclick="setRace(); setSubRace()">Race</button>
@@ -18,7 +18,7 @@
     <p id="subrace"></p>
     </div>
     <div class="randomiseClass">
-    <button onclick="setClas()">Class</button></p>
+    <button onclick="setClas(); setSubClas()">Class</button></p>
     <p id="class"></p>
     <p id="subclass"></p>
     </div>
@@ -33,6 +33,9 @@
 </div>
 
 <script>
+
+// races
+
 function setRace() {
 
 // Randomise Race
@@ -270,96 +273,309 @@ let clas = classArr[Math.floor(Math.random()*classArr.length)];
 
 document.getElementById("class").innerHTML = clas;
 
+// Get more info on Race
+
+let clasInfo = document.createElement("a");
+
+clasInfo.innerHTML = "Get More Info";
+clasInfo.setAttribute = ("class", "moreInfo");
+clasInfo.href = `${clas}.html`;
+
+document.getElementById("class").appendChild(clasInfo);
+
+globalClas = clas;
+};
+
 // subclasses
 
-function setSubClas () {
+function artSubClass(){
+    let artArr = ["Alchemist", "Artillerist", "Battle Smith"];
 
-if (clas === "Artificer") {
-        let artArr = ["Alchemist", "Artillerist", "Battle Smith"];
+    let art = artArr[Math.floor(Math.random()*artArr.length)];
+    
+    document.getElementById("subclass").innerHTML = art;
 
-        let art = artArr[Math.floor(Math.random()*artArr.length)];
+// get subrace info
 
-        return art;
-    } else if (clas === "Barbarian") {
+    let artInfo = document.createElement("a");
+
+    artInfo.innerHTML = "Get More Info";
+    artInfo.setAttribute = ("class", "moreInfo");
+    artInfo.href = `${art}.html`;
+
+    document.getElementById("subclass").appendChild(artInfo);
+};
+
+function barbSubClass() {
     let barbArr = ["Ancestral Guardian", "Beast", "Battlerager", "Berserker", "Storm Herald", "Totem Warrior", "Wild Soul", "Zealot"];
 
     let barb = barbArr[Math.floor(Math.random()*barbArr.length)];
 
-    return barb;
-} else if (clas === "Bard") {
+    document.getElementById("subclass").innerHTML = barb;
+
+// get subrace info
+
+    let barbInfo = document.createElement("a");
+
+    barbInfo.innerHTML = "Get More Info";
+    barbInfo.setAttribute = ("class", "moreInfo");
+    barbInfo.href = `${barb}.html`;
+
+    document.getElementById("subclass").appendChild(barbInfo);
+
+};
+
+function bardSubClass() {
     let bardArr = ["College of Creation", "College of Eloquence", "College of Glamour", "College of Lore", "College of Satire", "College of Spirits", "College of Swords", "College of Valor", "College of Whispers"];
 
     let bard = bardArr[Math.floor(Math.random()*bardArr.length)];
 
-    return bard;
-} else if (clas === "Cleric") {
+    document.getElementById("subclass").innerHTML = barb;
+
+// get subrace info
+
+    let bardInfo = document.createElement("a");
+
+    bardInfo.innerHTML = "Get More Info";
+    bardInfo.setAttribute = ("class", "moreInfo");
+    bardInfo.href = `${bard}.html`;
+
+    document.getElementById("subclass").appendChild(bardInfo);
+
+};
+
+function cleSubRace() {
     let cleArr = ["Ambition Domain", "Arcana Domain", "Beauty Domain", "City Domain", "Darkness Domain", "Death Domain", "Destruction Domain", "Forge Domain", "Grave Domain", "Knowledge Domain", "Life Domain", "Light Domain", "Love Domain", "Nature Domain", "Order Domain", "Protection Domain", "Solidarity Domain", "Strength Domain", "Tempest Domain", "Trickery Domain", "Twilight Domain", "Unity Domain", "War Domain", "Zeal Domain"];
 
     let cle = cleArr[Math.floor(Math.random()*cleArr.length)];
 
-    return cle;
-} else if (clas === "Druid") {
+    document.getElementById("subclass").innerHTML = cle;
+
+// get subrace info
+
+    let cleInfo = document.createElement("a");
+
+    cleInfo.innerHTML = "Get More Info";
+    cleInfo.setAttribute = ("class", "moreInfo");
+    cleInfo.href = `${cle}.html`;
+
+    document.getElementById("subclass").appendChild(cleInfo);
+};
+
+function druSubClass() {
     let druArr = ["Circle of Dreams", "Circle of the Land", "Circle of the Moon", "Circle of the Shepard", "Circle of Spores", "Circle of Stars", "Circle of Twilight", "Circle of Wildfire"];
 
     let dru = druArr[Math.floor(Math.random()*druArr.length)];
 
-    return dru;
-} else if (clas === "Fighter") {
+    document.getElementById("subclass").innerHTML = dru;
+
+// get subrace info
+
+    let druInfo = document.createElement("a");
+
+    druInfo.innerHTML = "Get More Info";
+    druInfo.setAttribute = ("class", "moreInfo");
+    druInfo.href = `${dru}.html`;
+
+    document.getElementById("subclass").appendChild(druInfo);
+};
+
+function figSubClass() {
     let figArr = ["Arcane Archer", "Brute", "Battle Master", "Cavalier", "Champion", "Echo Knight", "Eldritch Knight", "Knight", "Monster Hunter", "Psi Knight", "Psychic Warrior", "Rune Night", "Samurai", "Scout", "Sharpshooter", "Slayer", "Warlord", "Weapon Master"];
 
     let fig = figArr[Math.floor(Math.random()*figArr.length)];
 
-    return fig;
-} else if (clas === "Monk") {
+    document.getElementById("subclass").innerHTML = fig;
+
+// get subrace info
+
+    let figInfo = document.createElement("a");
+
+    figInfo.innerHTML = "Get More Info";
+    figInfo.setAttribute = ("class", "moreInfo");
+    figInfo.href = `${fig}.html`;
+
+    document.getElementById("subclass").appendChild(figInfo);
+}
+
+function monSubClass() {
     let monArr = ["Astral Self", "Drunken Master", "Four Elements", "Kensei", "Long Death", "Mercy", "Open Hand", "Shadow", "Soul Knife", "Sun Soul", "Tranquility"];
 
     let mon = monArr[Math.floor(Math.random()*monArr.length)];
 
-    return mon
-} else if (clas === "Paladin") {
+    document.getElementById("subclass").innerHTML = mon;
+
+// get subrace info
+
+    let monInfo = document.createElement("a");
+
+    monInfo.innerHTML = "Get More Info";
+    monInfo.setAttribute = ("class", "moreInfo");
+    monInfo.href = `${mon}.html`;
+
+    document.getElementById("subclass").appendChild(monInfo);
+};
+
+function palSubClass() {
     let palArr = ["Oath of the Ancients", "Oath of Conquest", "Oath of the Crown", "Oath of Devotion", "Oath of Glory", "Oath of Heroism", "Oathbreaker", "Oath of Redemption", "Oath of Treachery", "Oath of Vengeance", "Oath of Watchers"];
 
     let pal = palArr[Math.floor(Math.random()*palArr.length)];
 
-    return pal
-} else if (clas === "Blood Hunter") {
-    return " "
-} else if (clas === "Ranger") {
+    document.getElementById("subclass").innerHTML = pal;
+
+// get subrace info
+
+    let palInfo = document.createElement("a");
+
+    palInfo.innerHTML = "Get More Info";
+    palInfo.setAttribute = ("class", "moreInfo");
+    palInfo.href = `${pal}.html`;
+
+    document.getElementById("subclass").appendChild(palInfo);
+};
+
+function ranSubClass() {
     let ranArr = ["Beast Conclave", "Deep Stalker Conclave", "Fey Wanderer", "Gloom Stalker", "Horizon Walker", "Hunter Conclave", "Monster Slayer", "Primeval Guardian", "Swarmkeeper"];
 
     let ran = ranArr[Math.floor(Math.random()*ranArr.length)];
 
-    return ran
-} else if (clas === "Rogue") {
+    document.getElementById("subclass").innerHTML = ran;
+
+// get subrace info
+
+    let ranInfo = document.createElement("a");
+
+    ranInfo.innerHTML = "Get More Info";
+    ranInfo.setAttribute = ("class", "moreInfo");
+    ranInfo.href = `${ran}.html`;
+
+    document.getElementById("subclass").appendChild(ranInfo);
+};
+
+function rogSubClass() {
     let rogArr = ["Acrobat", "Arcane Trickster", "Assassin", "Inquisitive", "Mastermind", "Phantom", "Revived", "Scout", "Soulknife", "Swashbuckler", "Thief"];
 
     let rog = rogArr[Math.floor(Math.random()*rogArr.length)];
 
-    return rog
-}  else if (clas === "Sorceror") {
+    document.getElementById("subclass").innerHTML = rog;
+
+// get subrace info
+
+    let rogInfo = document.createElement("a");
+
+    rogInfo.innerHTML = "Get More Info";
+    rogInfo.setAttribute = ("class", "moreInfo");
+    rogInfo.href = `${rog}.html`;
+
+    document.getElementById("subclass").appendChild(rogInfo);
+};
+
+function sorSubClass() {
     let sorArr = ["Aberrant Mind", "Clockwork Soul", "Divine Soul", "Draconic", "Favoured Soul", "Giant Soul", "Pheonix", "Psionic Soul", "Pyromancer", "Sea", "Shadow", "Stone", "Storm", "Wild"];
 
     let sor = sorArr[Math.floor(Math.random()*sorArr.length)];
 
-    return sor
-} else if (clas === "Warlock") {
+    document.getElementById("subclass").innerHTML = sor;
+
+// get subrace info
+
+    let sorInfo = document.createElement("a");
+
+    sorInfo.innerHTML = "Get More Info";
+    sorInfo.setAttribute = ("class", "moreInfo");
+    sorInfo.href = `${sor}.html`;
+
+    document.getElementById("subclass").appendChild(sorInfo);
+};
+
+function warSubClass() {
     let warArr = ["Archfey", "Celestial", "Fiend", "Genie", "Ghost in the Machine", "Great Old One", "Hexblade", "Kraken", "Lolth", "Lurker in the Deep", "Noble Genie", "Raven Queen", "Seeker", "Undead", "Undying", "Undying Light"];
 
-    let war = warArr[Math.floor(Math.random()*warArr.length)];
+    let war = warArr[Math.floor(Math.random()*warArr.length)]; 
 
-    return war
-} else if (clas === "Wizard") {
+    document.getElementById("subclass").innerHTML = war;
+
+// get subrace info
+
+    let warInfo = document.createElement("a");
+
+    warInfo.innerHTML = "Get More Info";
+    warInfo.setAttribute = ("class", "moreInfo");
+    warInfo.href = `${war}.html`;
+
+    document.getElementById("subclass").appendChild(warInfo);
+};
+
+function wizSubClass() {
     let wizArr = ["Abjuration", "Bladesinging", "Bladesinging but better", "Chronurgy", "Conjuration", "Divination", "Enchantmet", "Evocation", "Graviturgy", "Illusion", "Invention", "Lore Mastery", "Necromancy", "Onomancy", "Psionics", "Scribes", "Technomancy", "Theurgy", "Transmutation", "War"];
 
     let wiz = wizArr[Math.floor(Math.random()*wizArr.length)];
 
-    return wiz
+    document.getElementById("subclass").innerHTML = wiz;
+
+// get subrace info
+
+    let wizInfo = document.createElement("a");
+
+    wizInfo.innerHTML = "Get More Info";
+    wizInfo.setAttribute = ("class", "moreInfo");
+    wizInfo.href = `${wiz}.html`;
+
+    document.getElementById("subclass").appendChild(wizInfo);
+}
+
+
+
+function setSubClas () {
+
+if (globalClas === "Artificer") {
+    artSubClass();
+
+    } else if (globalClas === "Barbarian") {
+    barbSubClass();
+
+} else if (globalClas === "Bard") {
+    bardSubClass();
+
+} else if (globalClas === "Cleric") {
+    cleSubClass();
+
+} else if (globalClas === "Druid") {
+    druSubClass();
+
+} else if (globalClas === "Fighter") {
+    figSubClass();
+
+} else if (globalClas === "Monk") {
+    monSubClass();
+
+} else if (globalClas === "Paladin") {
+    palSubClass();
+
+} else if (globalClas === "Blood Hunter") {
+    document.getElementById("subclass").innerHTML = " ";
+
+} else if (globalClas === "Ranger") {
+    ranSubClass();
+
+} else if (globalClas === "Rogue") {
+    rogSubClass();
+
+}  else if (globalClas === "Sorceror") {
+    sorSubClass();
+
+} else if (globalClas === "Warlock") {
+    warSubClass();
+
+} else if (globalClas === "Wizard") {
+    wizSubClass();
+
 } else {
-    return " "
+    document.getElementById("subclass").innerHTML = "test";
 };
 };
     document.getElementById("subclass").innerHTML = setSubClas();
-}
+
 
 // Background
 
