@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Info Page Template</title>
+<link rel="stylesheet" href="info.css"></link>
+</head>
+<body>
+
+<!--Navigation Bar Top-->
+
+    <div class="topNav">
+            <p>Home</p>
+            <p>Races</p>
+            <p>Classes</p>
+            <p>Backgrounds</p>
+            <p>Feats</p>
+        </ul>
+    </div>
+
+<!--Main Content inc. Side Nav-->
+
+<div class="main">
+
+<!--Navigation Bar Side-->
+
+    <div class="sideNav">
+            <p>Artificer</p>
+            <p>Barbarian</p>
+            <p>Bard</p>
+            <p>Blood Hunter</p>
+            <p>Cleric</p>
+            <p>Druid</p>
+            <p>Fighter</p>
+            <p>Monk</p>
+            <p>Paladin</p>
+            <p>Ranger</p>
+            <p>Rogue</p>
+            <p>Sorceror</p>
+            <p>Warlock</p>
+            <p>Wizard</p>
+    </div>
+
+    <div class="mainInfo">
+        <h1>Title of Class</h1>
+        <p>This is some info about the class</p>
+
+        <div class="subClasses">
+                <p>Subclass 1</p>
+                <p>Subclass 2</p>
+                <p>Subclass 3</p>
+        </div>
+
+        <div class="subInfo">
+            <p>This will be some subclass info less than three</p>
+        </div>
+
+    </div>
+
+    <div class="feats">
+        <p>This is some sample feats</p>
+    </div>
+
+</div>
+
+<script>
+
+    // top nav sticky scroll
+    window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("topNav").style.padding = "30px 10px";
+  } else {
+    document.getElementById("topNav").style.padding = "80px 10px";
+  }
+}
+</script>
+
+</body>
+</html>
