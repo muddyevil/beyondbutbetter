@@ -6,6 +6,8 @@
 </head>
 <body>
 
+    <script src="info.js"></script>
+
 <!--Navigation Bar Top-->
 
     <div class="topNav">
@@ -24,7 +26,7 @@
 <!--Navigation Bar Side-->
 
     <div class="sideNav">
-            <p>Artificer</p>
+            <a href="javascript:fillArtificer()">Artificer</a>
             <p>Barbarian</p>
             <p>Bard</p>
             <p>Blood Hunter</p>
@@ -41,8 +43,11 @@
     </div>
 
     <div class="mainInfo">
-        <h1>Title of Class</h1>
-        <p>This is some info about the class</p>
+        <h1 id="className"></h1>
+        <p id="classInfo"></p>
+
+        <h2 id="info1Title"></h2>
+        <p id="info1"></p>
 
         <div class="subClasses">
                 <p>Subclass 1</p>
@@ -61,10 +66,6 @@
     </div>
 
 </div>
-
-<script>
-
-</script>
 
 </body>
 </html>
